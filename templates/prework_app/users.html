@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+  </head>
+  <body>
+    <h1>Here are all of the users</h1>
+
+    {% if user_records %} <!--"user-records is coming from the view dictionary"-->
+      <table class="djangotwo">
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </thead>
+        {% for user in user_records %}
+        <tr>
+          <td>{{user.first_name}}</td>
+           <td>{{user.last_name}}</td>
+           <td>{{user.email}}</td>
+        </tr>
+        {% endfor %}
+
+    {% else %}
+        <p>There are no users</p>
+    {% endif %}
+      </table>
+  </body>
+</html>
