@@ -86,11 +86,12 @@ DATABASES = {
         'PASSWORD': 'Nina3689',
     },
     'testdb':{
-        'ENGINE':'django.db.backends.postgres',
+        'ENGINE':'django.db.backends.postgresql',
         'NAME': 'bghtwziu',
         'USER' : 'bghtwziu',
         'PASSWORD': 'X_V0x-DWxO6KaG7imXYNGh2EhIbJtzsr',
-        'HOST': 'postgres://bghtwziu:X_V0x-DWxO6KaG7imXYNGh2EhIbJtzsr@stampy.db.elephantsql.com:5432/bghtwziu',
+        'HOST': 'stampy.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
