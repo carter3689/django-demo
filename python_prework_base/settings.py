@@ -84,6 +84,13 @@ DATABASES = {
         'NAME': 'prework',
         'USER': 'postgres',
         'PASSWORD': 'Nina3689',
+    },
+    'testdb':{
+        'ENGINE':'django.db.backends.postgres',
+        'NAME': 'bghtwziu',
+        'USER' : 'bghtwziu',
+        'PASSWORD': 'X_V0x-DWxO6KaG7imXYNGh2EhIbJtzsr',
+        'HOST': 'postgres://bghtwziu:X_V0x-DWxO6KaG7imXYNGh2EhIbJtzsr@stampy.db.elephantsql.com:5432/bghtwziu',
     }
 }
 
@@ -140,3 +147,5 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/userauth/user_login'
