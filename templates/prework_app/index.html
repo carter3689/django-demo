@@ -4,18 +4,18 @@
   {% block body_block %}
     <h1>Hello how are you</h1>
     <h2>Here's your data</h2>
-
+    {{injectme}}
     <div class="djangotwo">
-      {% if access_records %}
+      {% if users_list %}
         <table>
           <thead>
             <th>Site Name</th>
             <th>Date Access</th>
           </thead>
-          {% for acc in access_records %}
+          {% for user in users_list %}
             <tr>
-              <td>{{acc.name}}</td>
-              <td>{{acc.date}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
             </tr>
           {% endfor %}
         </table>

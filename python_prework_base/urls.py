@@ -21,10 +21,15 @@ from userauth.views import user_login
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.UserView.as_view(template_name='prework_app/index.html'), name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^users/',include('prework_app.urls')),
     url(r'^formpage/',include('prework_app.urls')),
     url(r'^userauth/',include('userauth.urls')),
     url(r'logout/$',user_login,name = 'logout'),
 ]
+
+
+''' Note to self - If I need to use a template not created by django, say for Example
+    index.html, inserting the template name will allow me to use the template I created)
+'''
