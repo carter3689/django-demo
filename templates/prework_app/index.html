@@ -1,12 +1,7 @@
 <!DOCTYPE html>
+{% extends "prework_app/base.html" %}
 {% load staticfiles %}
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Django project example</title>
-    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
-  </head>
-  <body>
+  {% block body_block %}
     <h1>Hello how are you</h1>
     <h2>Here's your data</h2>
 
@@ -28,5 +23,4 @@
           <p>No Records Found</p>
         {% endif %}
     </div>
-  </body>
-</html>
+    {% endblock %}

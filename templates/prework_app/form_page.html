@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Forms</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  </head>
-  <body>
+{% extends "prework_app/base.html" %}
+{% load staticfiles %}
+  {% block body_block %}
     <h1>Fill out this form please!</h1>
     <div class="container">
       <form method="post">
@@ -14,5 +10,5 @@
         <input type="submit" class="btn btn-primary" value='Submit'>
       </form>
     </div>
-  </body>
-</html>
+
+{% endblock %}

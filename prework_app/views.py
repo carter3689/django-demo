@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from prework_app.models import Topic,Webpage,AccessRecord,Users
+from prework_app.models import Topic,Webpage,AccessRecord
+from prework_app.forms import NewUserForm
 from . import forms
 # Create your views here.
 class IndexView(TemplateView):
@@ -14,10 +15,19 @@ def index(request):
     return render(request,'prework_app/index.html',context=date_dict)
 
 def users(request):
-    users_list = Users.objects.order_by('first_name')
-    user_dict = {'user_records': users_list}
+    form = NewUserForm()
+    if request.method == 'POST':
+        form = NewUserForm(request.POST)
 
-    return render(request,'prework_app/users.html', context=user_dict)
+        if form.is_valid():
+            form.save(commit=True)
+
+            return index(request)
+
+        else:
+            print('ERROR FORM INVALID')
+
+    return render(request,'prework_app/users.html', {'form':form})
 
 
 def form_name_view(request):
